@@ -1,4 +1,6 @@
 import { SiAnthropic, SiOpenai, SiGoogle, SiRaspberrypi } from 'react-icons/si';
+import bcsLogo from '../assets/bcs-logo.svg';
+import casLogo from '../assets/cas-logo.png';
 
 export function Partners() {
   return (
@@ -11,8 +13,12 @@ export function Partners() {
       </div>
       
       <div className="grid-logos">
-        <div className="logo-item text-logo">BCS Academy</div>
-        <div className="logo-item text-logo">Computing at School</div>
+        <div className="logo-item tooltip" data-tooltip="BCS Academy">
+          <img src={bcsLogo} alt="BCS Academy" style={{ filter: 'brightness(0) invert(1)', height: '40px', objectFit: 'contain' }} />
+        </div>
+        <div className="logo-item tooltip" data-tooltip="Computing at School">
+          <img src={casLogo} alt="Computing at School" style={{ filter: 'brightness(0) invert(1)', height: '50px', objectFit: 'contain' }} />
+        </div>
         
         <div className="logo-item icon-logo tooltip" data-tooltip="Raspberry Pi Foundation">
           <SiRaspberrypi size={40} />
