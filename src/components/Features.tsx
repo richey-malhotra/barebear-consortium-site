@@ -1,3 +1,5 @@
+import { FiBookOpen, FiEdit, FiAward } from 'react-icons/fi';
+
 export function Features() {
   return (
     <section id="curriculum" className="section container">
@@ -10,7 +12,7 @@ export function Features() {
       
       <div className="bento-grid">
         <div className="bento-card hover-glow">
-          <div className="card-icon">📚</div>
+          <div className="card-icon"><FiBookOpen /></div>
           <h3 className="mb-1 text-primary tracking-tight">Free Core Curriculum</h3>
           <p className="text-secondary">
             12 lessons, open-source and MIT-licensed. Built to run in browsers with zero setup. 
@@ -19,7 +21,7 @@ export function Features() {
         </div>
         
         <div className="bento-card hover-glow">
-          <div className="card-icon">📝</div>
+          <div className="card-icon"><FiEdit /></div>
           <h3 className="mb-1 text-primary tracking-tight">Spec-Mapped Assessment</h3>
           <p className="text-secondary">
             Creating the resources schools actually buy: topic tests, mark schemes, 
@@ -28,7 +30,7 @@ export function Features() {
         </div>
         
         <div className="bento-card hover-glow bento-span-full">
-          <div className="card-icon">🎓</div>
+          <div className="card-icon"><FiAward /></div>
           <h3 className="mb-1 text-primary tracking-tight">Teacher CPD Pathway</h3>
           <p className="text-secondary max-w-800">
             80% of A-level CS teachers are non-specialists. We are building the specific training 
