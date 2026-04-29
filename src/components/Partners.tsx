@@ -1,8 +1,34 @@
 import { SiAnthropic, SiOpenai, SiGoogle, SiRaspberrypi } from 'react-icons/si';
 import bcsLogo from '../assets/bcs-logo.svg';
 import casLogo from '../assets/cas-logo.png';
+import turingLogo from '../assets/turing-logo.png';
+import ncscLogo from '../assets/ncsc-logo.png';
+import oakLogo from '../assets/oak-logo.png';
 
 export function Partners() {
+  const logos = [
+    { type: 'img', src: turingLogo, alt: "The Alan Turing Institute", height: '40px' },
+    { type: 'img', src: ncscLogo, alt: "National Cyber Security Centre", height: '40px' },
+    { type: 'img', src: oakLogo, alt: "Oak National Academy", height: '40px' },
+    { type: 'img', src: bcsLogo, alt: "BCS Academy", height: '40px' },
+    { type: 'img', src: casLogo, alt: "Computing at School", height: '50px' },
+    { type: 'icon', component: <SiRaspberrypi size={40} />, alt: "Raspberry Pi Foundation" },
+    { type: 'text', text: "Micro:bit", alt: "Micro:bit Foundation" },
+    { type: 'icon', component: <SiGoogle size={40} />, alt: "Google (Gemini)" },
+    { type: 'icon', component: <SiAnthropic size={40} />, alt: "Anthropic" },
+    { type: 'icon', component: <SiOpenai size={40} />, alt: "OpenAI" },
+  ];
+
+  const renderLogo = (logo: any, index: number) => {
+    return (
+      <div key={index} className={`logo-item tooltip ${logo.type === 'text' ? 'text-logo' : logo.type === 'icon' ? 'icon-logo' : ''}`} data-tooltip={logo.alt}>
+        {logo.type === 'img' && <img src={logo.src} alt={logo.alt} style={{ filter: 'brightness(0) invert(1)', height: logo.height, objectFit: 'contain' }} />}
+        {logo.type === 'icon' && logo.component}
+        {logo.type === 'text' && logo.text}
+      </div>
+    );
+  };
+
   return (
     <section id="partners" className="section container">
       <div className="text-center">
@@ -12,42 +38,10 @@ export function Partners() {
         </p>
       </div>
       
-      <div className="grid-logos">
-        {/* Strategic Government/Institutional Partners */}
-        <div className="logo-item text-logo tooltip" data-tooltip="The Alan Turing Institute">
-          The Alan Turing Institute
-        </div>
-        <div className="logo-item text-logo tooltip" data-tooltip="National Cyber Security Centre">
-          NCSC
-        </div>
-        <div className="logo-item text-logo tooltip" data-tooltip="Oak National Academy">
-          Oak National Academy
-        </div>
-
-        {/* Existing Partners */}
-        <div className="logo-item tooltip" data-tooltip="BCS Academy">
-          <img src={bcsLogo} alt="BCS Academy" style={{ filter: 'brightness(0) invert(1)', height: '40px', objectFit: 'contain' }} />
-        </div>
-        <div className="logo-item tooltip" data-tooltip="Computing at School">
-          <img src={casLogo} alt="Computing at School" style={{ filter: 'brightness(0) invert(1)', height: '50px', objectFit: 'contain' }} />
-        </div>
-        
-        <div className="logo-item icon-logo tooltip" data-tooltip="Raspberry Pi Foundation">
-          <SiRaspberrypi size={40} />
-        </div>
-        
-        <div className="logo-item text-logo">Micro:bit</div>
-        
-        <div className="logo-item icon-logo tooltip" data-tooltip="Anthropic">
-          <SiAnthropic size={40} />
-        </div>
-        
-        <div className="logo-item icon-logo tooltip" data-tooltip="OpenAI">
-          <SiOpenai size={40} />
-        </div>
-        
-        <div className="logo-item icon-logo tooltip" data-tooltip="Google (Gemini)">
-          <SiGoogle size={40} />
+      <div className="logo-scroller">
+        <div className="logo-track">
+          {logos.map((logo, index) => renderLogo(logo, index))}
+          {logos.map((logo, index) => renderLogo(logo, index + logos.length))}
         </div>
       </div>
     </section>

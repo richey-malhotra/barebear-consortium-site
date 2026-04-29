@@ -261,13 +261,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Partners Section */
-.grid-logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: center;
-  align-items: center;
+.logo-scroller {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
   margin-top: 4rem;
+  padding: 1rem 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  gap: 4rem;
+  animation: scroll 40s linear infinite;
+}
+
+.logo-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-50% - 2rem));
+  }
 }
 
 .logo-item {
@@ -277,14 +295,18 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   position: relative;
+  opacity: 0.6;
 }
 
-.logo-item.icon-logo { opacity: 0.6; }
+.logo-item img {
+  opacity: 1; /* Relying on parent opacity for consistent hover states */
+}
+
 .logo-item.text-logo {
   font-weight: 600;
   font-size: 1.25rem;
   letter-spacing: -0.02em;
-  opacity: 0.6;
+  white-space: nowrap;
 }
 
 .logo-item:hover {
