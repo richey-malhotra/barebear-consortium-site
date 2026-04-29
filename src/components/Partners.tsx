@@ -19,7 +19,7 @@ export function Partners() {
         </div>
         
         {/* Micro:bit doesn't have an official icon in simpleicons, using text for reliability */}
-        <div className="logo-item text-logo">Micro:bit Fdn</div>
+        <div className="logo-item text-logo">Micro:bit</div>
         
         <div className="logo-item icon-logo tooltip" data-tooltip="Anthropic">
           <SiAnthropic size={40} />

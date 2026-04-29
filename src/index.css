@@ -60,6 +60,7 @@ h1, h2, h3, h4, h5, h6 {
   background-clip: text;
   color: transparent;
   display: inline-block;
+  padding-bottom: 0.1em; /* Prevents background-clip from clipping descending letters */
 }
 
 /* Utilities */
@@ -361,6 +362,42 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
   box-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
+
+/* Form Styles */
+.contact-form {
+  margin-top: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--text-primary);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.text-green-400 { color: #4ade80; }
+.text-red-400 { color: #f87171; }
+.w-full { width: 100%; }
+.block { display: block; }
 
 /* Footer */
 footer {
