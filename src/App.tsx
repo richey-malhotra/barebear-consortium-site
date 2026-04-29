@@ -76,13 +76,13 @@ function App() {
           </div>
           
           <div className="grid-logos">
-            <div className="logo-placeholder">BCS Academy</div>
-            <div className="logo-placeholder">Computing at School</div>
-            <div className="logo-placeholder">Raspberry Pi Fdn</div>
-            <div className="logo-placeholder">Micro:bit Fdn</div>
-            <div className="logo-placeholder">Anthropic</div>
-            <div className="logo-placeholder">OpenAI</div>
-            <div className="logo-placeholder">Google (Gemini)</div>
+            <div className="logo-placeholder" style={{ border: 'none', background: 'transparent' }}>BCS Academy</div>
+            <div className="logo-placeholder" style={{ border: 'none', background: 'transparent' }}>Computing at School</div>
+            <img src="https://cdn.simpleicons.org/raspberrypi/white" alt="Raspberry Pi Fdn" height="40" />
+            <img src="https://cdn.simpleicons.org/microbit/white" alt="Micro:bit Fdn" height="40" />
+            <img src="https://cdn.simpleicons.org/anthropic/white" alt="Anthropic" height="40" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" style={{ filter: 'invert(1)' }} alt="OpenAI" height="40" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" style={{ filter: 'invert(1) grayscale(100%) brightness(200%)' }} alt="Google (Gemini)" height="35" />
           </div>
         </section>
 
