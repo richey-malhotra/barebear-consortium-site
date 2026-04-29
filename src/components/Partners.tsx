@@ -13,6 +13,18 @@ export function Partners() {
       </div>
       
       <div className="grid-logos">
+        {/* Strategic Government/Institutional Partners */}
+        <div className="logo-item text-logo tooltip" data-tooltip="The Alan Turing Institute">
+          The Alan Turing Institute
+        </div>
+        <div className="logo-item text-logo tooltip" data-tooltip="National Cyber Security Centre">
+          NCSC
+        </div>
+        <div className="logo-item text-logo tooltip" data-tooltip="Oak National Academy">
+          Oak National Academy
+        </div>
+
+        {/* Existing Partners */}
         <div className="logo-item tooltip" data-tooltip="BCS Academy">
           <img src={bcsLogo} alt="BCS Academy" style={{ filter: 'brightness(0) invert(1)', height: '40px', objectFit: 'contain' }} />
         </div>
@@ -24,7 +36,6 @@ export function Partners() {
           <SiRaspberrypi size={40} />
         </div>
         
-        {/* Micro:bit doesn't have an official icon in simpleicons, using text for reliability */}
         <div className="logo-item text-logo">Micro:bit</div>
         
         <div className="logo-item icon-logo tooltip" data-tooltip="Anthropic">
