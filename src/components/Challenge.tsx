@@ -27,18 +27,24 @@ export function Challenge({ onRegisterInterest }: ChallengeProps) {
           <div className="challenge-right">
             <div className="challenge-feature">
               <div className="feature-dot"></div>
-              <h4 className="text-primary mb-1">Theme Year 1</h4>
-              <p className="text-secondary text-sm">Agents for Accessibility. Design responsibly for a real audience.</p>
+              <div className="feature-content">
+                <h4 className="text-primary mb-1">Theme Year 1</h4>
+                <p className="text-secondary text-sm">Agents for Accessibility. Design responsibly for a real audience.</p>
+              </div>
             </div>
             <div className="challenge-feature">
               <div className="feature-dot"></div>
-              <h4 className="text-primary mb-1">The Rules</h4>
-              <p className="text-secondary text-sm">Entries must explicitly justify Policy, Budget, and declared side effects.</p>
+              <div className="feature-content">
+                <h4 className="text-primary mb-1">The Rules</h4>
+                <p className="text-secondary text-sm">Entries must explicitly justify Policy, Budget, and declared side effects.</p>
+              </div>
             </div>
             <div className="challenge-feature">
               <div className="feature-dot"></div>
-              <h4 className="text-primary mb-1">Free Entry</h4>
-              <p className="text-secondary text-sm">No financial barrier to participation for UK state schools.</p>
+              <div className="feature-content">
+                <h4 className="text-primary mb-1">Free Entry</h4>
+                <p className="text-secondary text-sm">No financial barrier to participation for UK state schools.</p>
+              </div>
             </div>
           </div>
         </div>
