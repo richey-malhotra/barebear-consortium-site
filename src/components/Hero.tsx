@@ -1,6 +1,9 @@
 export function Hero() {
   return (
     <section className="hero">
+      <div className="hero-bg">
+        <img src="https://raw.githubusercontent.com/richey-malhotra/barebear/v0.4.1/assets/demo.gif" alt="Background Demo" />
+      </div>
       <div className="hero-glow"></div>
       <div className="container relative z-10">
         <div className="hero-content animate-in">

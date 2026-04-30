@@ -10,7 +10,7 @@ export function Partners() {
     { type: 'img', src: turingLogo, alt: "The Alan Turing Institute", height: '56px', noInvert: true },
     { type: 'img', src: ncscLogo, alt: "National Cyber Security Centre", height: '40px' },
     { type: 'img', src: oakLogo, alt: "Oak National Academy", height: '40px' },
-    { type: 'img', src: bcsLogo, alt: "BCS Academy", height: '40px', brighten: true },
+    { type: 'img', src: bcsLogo, alt: "BCS Academy", height: '40px', noInvert: true },
     { type: 'img', src: casLogo, alt: "Computing at School", height: '50px' },
     { type: 'icon', component: <SiRaspberrypi size={40} />, alt: "Raspberry Pi Foundation" },
     { type: 'text', text: "Micro:bit", alt: "Micro:bit Foundation" },
@@ -22,7 +22,6 @@ export function Partners() {
   const renderLogo = (logo: any, index: number) => {
     let filter = 'brightness(0) invert(1)'; // default: make dark assets white
     if (logo.noInvert) filter = 'none';      // already white (e.g. Turing SVG text)
-    if (logo.brighten) filter = 'brightness(0) invert(1) opacity(0.85)'; // dark SVG → white with slight opacity
     return (
       <div key={index} className={`logo-item tooltip ${logo.type === 'text' ? 'text-logo' : logo.type === 'icon' ? 'icon-logo' : ''}`} data-tooltip={logo.alt}>
         {logo.type === 'img' && <img src={logo.src} alt={logo.alt} style={{ filter, height: logo.height, objectFit: 'contain' }} />}
