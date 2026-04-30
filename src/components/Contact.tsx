@@ -1,7 +1,18 @@
-import { useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
-export function Contact() {
+interface ContactProps {
+  prefillMessage?: string;
+}
+
+export function Contact({ prefillMessage }: ContactProps) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (prefillMessage && messageRef.current) {
+      messageRef.current.value = prefillMessage;
+    }
+  }, [prefillMessage]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -54,7 +65,7 @@ export function Contact() {
             
             <div className="form-group text-left mb-3">
               <label htmlFor="message" className="text-sm font-bold text-secondary mb-1 block">Message</label>
-              <textarea id="message" name="message" required rows={4} className="form-input" placeholder="How can we collaborate?"></textarea>
+              <textarea ref={messageRef} id="message" name="message" required rows={4} className="form-input" placeholder="How can we collaborate?"></textarea>
             </div>
 
             <button type="submit" className="btn btn-primary glow-btn w-full" disabled={status === 'loading'}>

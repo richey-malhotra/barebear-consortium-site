@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Features } from './components/Features';
@@ -9,9 +9,18 @@ import { Footer } from './components/Footer';
 import './index.css';
 
 function App() {
+  const [contactPrefill, setContactPrefill] = useState('');
+
   useEffect(() => {
     document.title = "UK Schools AI Consortium";
   }, []);
+
+  const handleRegisterInterest = () => {
+    setContactPrefill("I'd like to register interest in the UK Schools AI Agent Challenge 2026 and learn more about how to get involved.");
+    setTimeout(() => {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  };
 
   return (
     <div className="app-wrapper">
@@ -20,8 +29,8 @@ function App() {
         <Hero />
         <Features />
         <Partners />
-        <Challenge />
-        <Contact />
+        <Challenge onRegisterInterest={handleRegisterInterest} />
+        <Contact prefillMessage={contactPrefill} />
       </main>
       <Footer />
     </div>
